@@ -1,0 +1,24 @@
+.calculation-summary{
+    margin: 30px;
+    padding: 20px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: 5px 5px  rgb(94, 89, 89);
+    background-color: #8badec;
+
+    .info-msg{
+        background-color: rgb(233, 233, 112);
+    }
+
+    h2, p {
+        margin-bottom: 30px;
+     }
+    p   {
+        font-size: 20px;
+        .mortgage_amount {
+            font-size : 40px;
+            font-weight: bolder;
+
+        }
+    }
+}

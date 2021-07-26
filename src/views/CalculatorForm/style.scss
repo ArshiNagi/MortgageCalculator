@@ -1,0 +1,25 @@
+$btn-color:#8badec;
+.mortgage-calculator-form{
+    margin: 30px;
+
+    .error_message{
+        border: 1px solid rgb(37, 35, 35);
+        color: #fff;
+        background-color: rgb(196, 101, 101);
+        border-radius:5px;
+        padding:5px;
+        margin-bottom: 30px;
+    }
+    .form-group {
+        margin-bottom: 30px;
+        label {
+            margin-bottom: 10px;
+        }
+    }
+    .calculate{
+        color: #fff;
+        background-color: $btn-color;
+        padding:6px;
+        border-radius: 10px;;
+    }
+}
