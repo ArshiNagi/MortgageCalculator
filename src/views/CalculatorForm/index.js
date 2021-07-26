@@ -40,10 +40,13 @@ const CalculatorForm = (props) => {
         const mortgageAmount = getMortgageAmount({amount, rate, noOfPayments, frequency});
         const getFrequencyLabel = payment_frequency.find(item => item.value === frequency);
         let hasError = false;
-        if(amount && amount >= 10000000){
+        if(!amount || !rate){
             hasError = true;
         }
-        if(rate && rate >= 10){
+        if(amount && (amount >= 10000000 || amount <= 5000)){
+            hasError = true;
+        }
+        if(rate && (rate <= 0 || rate >= 10 )){
             hasError = true;
         }
         props.data(noOfPayments, mortgageAmount, getFrequencyLabel.label, amount, hasError );
@@ -51,11 +54,15 @@ const CalculatorForm = (props) => {
     };
 
     const validateCalculationForm = () => {
-        if(amount && amount >= 10000000){
+        if(!amount || !rate){
+            setValidationError(true);
+            setErrorMessage(["Mortgage Amount and Interest Rate cannot be set to 0"]);
+        }
+        if(amount && (amount >= 10000000 || amount <= 5000)){
             setValidationError(true);
             setErrorMessage([...errorMessage,"Mortgage Amount entered should be between 5000 to 9999999"]);
         }
-        if(rate && rate >= 10){
+        if(rate && (rate >= 10 || rate <= 0)){
             setValidationError(true);
             setErrorMessage([...errorMessage,"Interest rate entered should be between 0 to 10"]);
         }
