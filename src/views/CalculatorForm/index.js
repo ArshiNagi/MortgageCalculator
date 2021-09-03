@@ -56,7 +56,7 @@ const CalculatorForm = (props) => {
     const validateCalculationForm = () => {
         if(!amount || !rate){
             setValidationError(true);
-            setErrorMessage(["Mortgage Amount and Interest Rate cannot be set to 0 "]);
+            setErrorMessage(["Mortgage Amount and the Interest Rate cannot be set to 0 "]);
         }
         if(amount && (amount >= 10000000 || amount <= 5000)){
             setValidationError(true);
